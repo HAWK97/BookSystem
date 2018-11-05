@@ -21,10 +21,10 @@ Hawk
 * POST
 ```
 {
-	"username": "20150615131",
-	"password": "123456",
-	"nickname": "hawk",
-	"mail": "wsghawk97@163.com"
+    "username": "20150615131",
+    "password": "123456",
+    "nickname": "hawk",
+    "mail": "wsghawk97@163.com"
 }
 ```
 * RETURN
@@ -41,8 +41,8 @@ Hawk
 * POST
 ```
 {
-	"username": "20150615131",
-	"password": "123456"
+    "username": "20150615131",
+    "password": "123456"
 }
 ```
 * RETURN
@@ -59,9 +59,9 @@ Hawk
 * PUT
 ```
 {
-	"username": "20150615131",
-	"mail": "wsghawk97@163.com",
-	"password": "123456"
+    "username": "20150615131",
+    "mail": "wsghawk97@163.com",
+    "password": "123456"
 }
 ```
 * RETURN
@@ -226,9 +226,9 @@ Hawk
 * POST
 ```
 {
-	"content": "这本书还不错，很生动形象，但我可能太笨，没怎么看懂",
-	"score": "3",
-	"bookId": 1
+    "content": "这本书还不错，很生动形象，但我可能太笨，没怎么看懂",
+    "score": "3",
+    "bookId": 1
 }
 ```
 * RETURN
