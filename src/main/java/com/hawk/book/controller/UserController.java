@@ -27,12 +27,13 @@ public class UserController {
     @ApiOperation(value = "登录", notes = "传入用户名(学号)和密码，如果保存密码，save 传 true")
     @PostMapping("/login")
     public ResponseMessage login(
-            @RequestBody User user,
+            @RequestBody User loginUser,
             @RequestParam(required = false, defaultValue = "false") boolean save,
             HttpServletRequest request) {
-        if (userService.login(user, save)) {
-            request.getSession().setAttribute("user", UserContextHolder.get());
-            return ResponseMessage.successMessage("登录成功");
+        if (userService.login(loginUser, save)) {
+            User user = UserContextHolder.get();
+            request.getSession().setAttribute("user", user);
+            return ResponseMessage.successMessage(user);
         }
         return ResponseMessage.failedMessage("登录失败");
     }
@@ -40,11 +41,12 @@ public class UserController {
     @ApiOperation(value = "注册", notes = "传入用户名(学号)、密码、邮箱(修改密码使用)以及昵称")
     @PostMapping("/register")
     public ResponseMessage register(
-            @RequestBody User user,
+            @RequestBody User registerUser,
             HttpServletRequest request) {
-        if (userService.register(user)) {
-            request.getSession().setAttribute("user", UserContextHolder.get());
-            return ResponseMessage.successMessage("注册成功");
+        if (userService.register(registerUser)) {
+            User user = UserContextHolder.get();
+            request.getSession().setAttribute("user", user);
+            return ResponseMessage.successMessage(user);
         }
         return ResponseMessage.failedMessage("注册失败");
     }
